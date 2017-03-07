@@ -11,7 +11,7 @@ var pathToLib = process.cwd()+'/'+process.argv[2];
 var pathToLibDir = path.dirname(pathToLib);
 var libName = path.basename(pathToLib,'.js');
 
-var lib = require(lib);
+var lib = require(pathToLib);
 
 // **************** Generate webworker ****************
 
