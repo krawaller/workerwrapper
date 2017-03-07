@@ -26,7 +26,7 @@ var compiler = webpack({
     filename: libName + '_worker.js'
   },
   resolve: {
-    extensions: [".js",""]
+    extensions: [".js"]
   }
 });
 
