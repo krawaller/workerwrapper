@@ -4,8 +4,8 @@ var fs = require("fs");
 var path = require("path");
 var webpack = require("webpack");
 
-var workerTemplate = fs.readFileSync("./template_worker.js")+'';
-var wrapperTemplate = fs.readFileSync("./template_wrapper.js")+'';
+var workerTemplate = fs.readFileSync(__dirname+"/template_worker.js")+'';
+var wrapperTemplate = fs.readFileSync(__dirname+"/template_wrapper.js")+'';
 
 var pathToLib = process.cwd()+'/'+process.argv[2];
 var pathToLibDir = path.dirname(pathToLib);
