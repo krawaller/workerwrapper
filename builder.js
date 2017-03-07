@@ -15,7 +15,7 @@ var lib = require(pathToLib);
 
 // **************** Generate webworker ****************
 
-var pathToTempFile = pathToLibDir + '/libworkerTEMP' + (+ new Date) + '.js'
+var pathToTempFile = pathToLibDir + '/' + libName + '_worker_TEMP.js';
 
 fs.writeFileSync(pathToTempFile, workerTemplate.replace('PATH_TO_LIB', pathToLib));
 
