@@ -2,6 +2,8 @@
 
 module.exports = function(pathToLib, nbrOfWorkers){
 
+  nbrOfWorkers = nbrOfWorkers || 1;
+
   var workerListeners = {};
   var freeWorkers = [];
   var busyWorkers = [];
