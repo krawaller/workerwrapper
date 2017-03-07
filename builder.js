@@ -34,9 +34,9 @@ compiler.run(function(err,stats){
   var timestamp = (new Date).toTimeString().split(" ")[0] + '   ';
   var message = stats.toString("errors-only") || 'Webworker file created at '+pathToLibDir+'/'+libName + '_worker.js';
   console.log(timestamp, message);
+  fs.unlinkSync(pathToTempFile);
 });
 
-fs.unlinkSync(pathToTempFile);
 
 // **************** Generate wrapped lib ****************
 
