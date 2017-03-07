@@ -2,7 +2,7 @@
   "name": "workerwrapper",
   "version": "0.0.1",
   "bin": {
-    "workerwrap": "./builder"
+    "workerwrap": "./builder.js"
   },
   "dependencies": {
     "webpack": "^2.2.1"
