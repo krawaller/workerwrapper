@@ -1,0 +1,10 @@
+{
+  "name": "workerwrapper",
+  "version": "0.0.1",
+  "bin": {
+    "workerwrap": "./builder"
+  },
+  "dependencies": {
+    "webpack": "^2.2.1"
+  }
+}
