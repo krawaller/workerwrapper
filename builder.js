@@ -31,13 +31,12 @@ var compiler = webpack({
 });
 
 compiler.run(function(err,stats){
-  var timestamp = (new Date).toTimeString().split(" ")[0] + '   ';
   var message = stats.toString("errors-only") || 'Webworker file created at '+pathToLibDir+'/'+libName + '_worker.js';
-  console.log(timestamp, message);
+  console.log(message);
   fs.unlinkSync(pathToTempFile);
 });
-
 
 // **************** Generate wrapped lib ****************
 
 fs.writeFileSync(pathToLibDir + '/'+libName+'_async.js', wrapperTemplate.replace('LIB_METHODS', JSON.stringify(Object.keys(lib))));
+console.log('Async wrapper file created at '+pathToLibDir+'/'+libName + '_async.js');
