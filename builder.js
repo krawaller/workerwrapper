@@ -13,6 +13,10 @@ var libName = path.basename(pathToLib,'.js');
 
 var lib = require(pathToLib);
 
+if (lib.default){
+  lib = lib;
+}
+
 // **************** Generate webworker ****************
 
 var pathToTempFile = pathToLibDir + '/' + libName + '_worker_TEMP.js';
@@ -38,7 +42,7 @@ compiler.run(function(err,stats){
 
 // **************** Generate wrapped lib ****************
 
-var methods = Object.keys(lib.default || lib);
+var methods = Object.keys(lib);
 
 fs.writeFileSync(pathToLibDir + '/'+libName+'_async.js', wrapperTemplate.replace('LIB_METHODS', JSON.stringify(methods)));
 console.log('Async wrapper file created at '+pathToLibDir+'/'+libName + '_async.js');
