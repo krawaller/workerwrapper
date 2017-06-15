@@ -2,6 +2,10 @@
 
 var lib = require('PATH_TO_LIB');
 
+if (lib.default){
+  lib = lib.default;
+}
+
 onmessage = function(e){
   var method = e.data[0];
   var callid = e.data[1];
