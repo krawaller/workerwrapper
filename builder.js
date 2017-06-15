@@ -14,7 +14,7 @@ var libName = path.basename(pathToLib,'.js');
 var lib = require(pathToLib);
 
 if (lib.default){
-  lib = lib;
+  lib = lib.default;
 }
 
 // **************** Generate webworker ****************
