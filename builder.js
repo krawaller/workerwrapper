@@ -38,5 +38,7 @@ compiler.run(function(err,stats){
 
 // **************** Generate wrapped lib ****************
 
-fs.writeFileSync(pathToLibDir + '/'+libName+'_async.js', wrapperTemplate.replace('LIB_METHODS', JSON.stringify(Object.keys(lib))));
+var methods = Object.keys(lib.default || lib);
+
+fs.writeFileSync(pathToLibDir + '/'+libName+'_async.js', wrapperTemplate.replace('LIB_METHODS', JSON.stringify(methods)));
 console.log('Async wrapper file created at '+pathToLibDir+'/'+libName + '_async.js');
